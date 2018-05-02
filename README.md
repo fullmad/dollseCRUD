@@ -50,6 +50,7 @@ You can start using this library in just two steps.
 4. [Select Columns for Edit Form](#select-columns-for-edit-form "Select Columns for Edit Form")
 5. [Select Columns for Add Form](#select-columns-for-add-form "Select Columns for Add Form")
 6. [Select Bootstrap Version](#select-bootstrap-version "Select Bootstrap Version")
+7. [Unset Jquery, Bootstrap, Jquery UI](#unset-jquery-bootstrap-jquery-ui "Unset Jquery, Bootstrap, Jquery UI")
 
 ### To use Where Condition:
 
