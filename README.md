@@ -1,4 +1,4 @@
-![Dollse CRUD]({{site.baseurl}}/https://i.imgur.com/PtAzIZ6.png)
+![Dollse CRUD](https://i.imgur.com/PtAzIZ6.png)
 
 # Welcome to dollseCRUD
 
