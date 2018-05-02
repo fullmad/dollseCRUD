@@ -81,5 +81,12 @@ $this->dollse_crud->add_columns('id, name, address');
 ### Select Bootstrap Version
 > Either You may Use Bootstrap 3 or Bootstrap 4. (Default is Bootstrap 4)
 ```php
-$this->dollse_crud->bootstrap('3'); /// 3 or 4 (It will load via CDN)
+$this->dollse_crud->set_bootstrap('3'); /// 3 or 4 (It will load via CDN)
+```
+### Unset Jquery, Bootstrap, Jquery UI
+> Either You may choose not to load jquery, bootstrap or jquery ui
+```php
+$this->dollse_crud->unset_jquery(); /// to unset jquery from loading
+$this->dollse_crud->unset_jqueryui(); /// to unset jqueryui from loading
+$this->dollse_crud->unset_bootstrap(); /// to unset bootstrap from loading
 ```
