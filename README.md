@@ -91,3 +91,11 @@ $this->dollse_crud->unset_jquery(); /// to unset jquery from loading
 $this->dollse_crud->unset_jqueryui(); /// to unset jqueryui from loading
 $this->dollse_crud->unset_bootstrap(); /// to unset bootstrap from loading
 ```
+
+### Unset Edit, Add or Detail View
+> If you choose not to allow editing, adding or detail view of perticular table you may try below:
+```php
+$this->dollse_crud->unset_view(); /// to unset detail view option
+$this->dollse_crud->unset_edit(); /// to unset edit option
+$this->dollse_crud->unset_remove(); /// to unset remove option
+```
