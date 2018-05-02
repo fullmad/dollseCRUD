@@ -1,3 +1,4 @@
+<div align="center"><img src="https://i.imgur.com/PtAzIZ6.png" align="center" width="150" ></div>
 ![Dollse CRUD](https://i.imgur.com/PtAzIZ6.png =150x150)
 
 # Welcome to dollseCRUD
