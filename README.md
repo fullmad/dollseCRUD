@@ -55,7 +55,7 @@ $this->dollse_crud->table('market'); /// Set table
 $this->dollse_crud->where('id', 7); /// called where condition
 ```
 ### Select Columns for View
-> This will select specific columns for display purpose only, not editin or adding
+> This will select specific columns for display purpose only, not editing or adding
 ```php
 $this->dollse_crud->columns('id, name, address');
 ```
