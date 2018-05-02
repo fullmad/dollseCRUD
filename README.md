@@ -18,7 +18,7 @@ Configuration is very simple.. Just copy and paste the library and model folder 
 You can start using this library in just two steps.
 1. In your view include  **<?php echo $header; ?>** in head and include **<?php echo $view ?>** inside body elements. example as given below:
 
-```
+```html
 <html>
 <head>
     <?php echo $header; ?>
