@@ -15,7 +15,7 @@ Configuration is very simple.. Just copy and paste the library and model folder 
 
 ### SIMPLE USAGES:
 You can start using this library in just two steps.
-1. in your view include  **<?php echo $header; ?>** in head and include **<?php echo $view ?>** inside body elements. example as given below:
+1. In your view include  **<?php echo $header; ?>** in head and include **<?php echo $view ?>** inside body elements. example as given below:
 
 ```
 <html>
@@ -29,4 +29,14 @@ You can start using this library in just two steps.
     </div>
 </body>
 </html>
+```
+
+2. In your conntroller just use as below:
+
+```php
+        $this->load->library('dollse_crud'); /// initialized dollseCRUD library
+        $this->dollse_crud->table('market'); /// Table Name
+        $data['header'] = $this->dollse_crud->header();
+        $data['view']   = $this->dollse_crud->view();
+        $this->load->view('site_index', $data); /// Sending data to view file
 ```
