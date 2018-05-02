@@ -12,6 +12,7 @@ DollseCRUD is codeigniter 3 & bootstrap 3/4 based **Create, Retrieve, Update, De
 
 ### CONFIGURATION:
 Configuration is very simple.. Just copy and paste the library and model folder inside your codeigniter application directory.
+> Requirement: database library need to be loaded.
 
 ### SIMPLE USAGES:
 You can start using this library in just two steps.
