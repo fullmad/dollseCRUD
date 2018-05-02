@@ -1,4 +1,4 @@
-<div align="center"><img src="https://i.imgur.com/PtAzIZ6.png" alt="dollseCRUB" align="center" width="200" ></div>
+<p align="center"><img src="https://i.imgur.com/PtAzIZ6.png" alt="dollseCRUB" align="center" width="200" style="border-radius:5px" ></p>
 
 # Welcome to dollseCRUD
 
