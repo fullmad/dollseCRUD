@@ -51,6 +51,7 @@ You can start using this library in just two steps.
 5. [Select Columns for Add Form](#select-columns-for-add-form "Select Columns for Add Form")
 6. [Select Bootstrap Version](#select-bootstrap-version "Select Bootstrap Version")
 7. [Unset Jquery, Bootstrap, Jquery UI](#unset-jquery-bootstrap-jquery-ui "Unset Jquery, Bootstrap, Jquery UI")
+8. [Unset Edit, Add or Detail View](#unset-edit-add-or-detail-view "Unset Edit, Add or Detail View")
 
 ### To use Where Condition:
 
