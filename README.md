@@ -1,20 +1,20 @@
 ![Dollse CRUD]({{site.baseurl}}/https://i.imgur.com/PtAzIZ6.png)
 
-## Welcome to dollseCRUD
+# Welcome to dollseCRUD
 
 DollseCRUD is codeigniter 3 & bootstrap 3/4 based **Create, Retrieve, Update, Delete** library. Simple and full featured.
 
-## Docmentation
+# Docmentation
 
 - Configuration
 - Simple Usages
 - Available Functions
 
-### CONFIGURATION:
+## CONFIGURATION:
 Configuration is very simple.. Just copy and paste the library and model folder inside your codeigniter application directory.
 > Requirement: database library need to be loaded.
 
-### SIMPLE USAGES:
+## SIMPLE USAGES:
 You can start using this library in just two steps.
 1. In your view include  **<?php echo $header; ?>** in head and include **<?php echo $view ?>** inside body elements. example as given below:
 
@@ -41,3 +41,14 @@ You can start using this library in just two steps.
         $data['view']   = $this->dollse_crud->view();
         $this->load->view('site_index', $data); /// Sending data to view file
 ```
+## AVAILABLE FUNCTIONS
+> To use dollse_CRUB inbuilt functions, just call fter calling table name. example as given below:
+
+## To use Where Condition:
+
+```php
+$this->load->library('dollse_crud'); /// loaded Library
+$this->dollse_crud->table('market'); /// Set table
+$this->dollse_crud->where('id', 7); /// called where condition
+```
+
