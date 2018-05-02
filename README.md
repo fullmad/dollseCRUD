@@ -44,7 +44,8 @@ You can start using this library in just two steps.
 ## AVAILABLE FUNCTIONS
 > To use dollse_CRUB inbuilt functions, preferably just call after calling table name. example as given below:
 
-1.[Where Condition](#to-use-where-condition "Where Condition")
+1. [Where Condition](#to-use-where-condition "Where Condition")
+2. 
 
 ### To use Where Condition:
 
