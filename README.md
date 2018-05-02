@@ -64,3 +64,13 @@ $this->dollse_crud->field_names('id, name, address');
 ```php
 $this->dollse_crud->view_columns('id, name, address');
 ```
+### Select Columns for Edit Form
+> This will select specific columns to show in editing form
+```php
+$this->dollse_crud->edit_columns('id, name, address');
+```
+### Select Columns for Add Form
+> This will select specific columns to show in Add Record form
+```php
+$this->dollse_crud->add_columns('id, name, address');
+```
