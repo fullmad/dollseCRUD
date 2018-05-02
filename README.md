@@ -42,13 +42,12 @@ You can start using this library in just two steps.
         $this->load->view('site_index', $data); /// Sending data to view file
 ```
 ## AVAILABLE FUNCTIONS
-> To use dollse_CRUB inbuilt functions, just call fter calling table name. example as given below:
+> To use dollse_CRUB inbuilt functions, preferably just call after calling table name. example as given below:
 
-## To use Where Condition:
+### To use Where Condition:
 
 ```php
 $this->load->library('dollse_crud'); /// loaded Library
 $this->dollse_crud->table('market'); /// Set table
 $this->dollse_crud->where('id', 7); /// called where condition
 ```
-
