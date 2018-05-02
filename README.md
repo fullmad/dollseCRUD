@@ -1,4 +1,4 @@
-![Dollse CRUD](https://i.imgur.com/PtAzIZ6.png)
+![Dollse CRUD](https://i.imgur.com/PtAzIZ6.png =150x150)
 
 # Welcome to dollseCRUD
 
