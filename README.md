@@ -45,7 +45,7 @@ You can start using this library in just two steps.
 > To use dollse_CRUB inbuilt functions, preferably just call after calling table name. example as given below:
 
 1. [Where Condition](#to-use-where-condition "Where Condition")
-2. 
+2. [Select Columns for View](#select-column-for -view "Select Columns for View")
 
 ### To use Where Condition:
 
@@ -53,4 +53,9 @@ You can start using this library in just two steps.
 $this->load->library('dollse_crud'); /// loaded Library
 $this->dollse_crud->table('market'); /// Set table
 $this->dollse_crud->where('id', 7); /// called where condition
+```
+### Select Columns for View
+
+```php
+$this->dollse_crud->columns('id, name, address');
 ```
