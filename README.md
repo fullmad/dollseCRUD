@@ -77,3 +77,8 @@ $this->dollse_crud->edit_columns('id, name, address');
 ```php
 $this->dollse_crud->add_columns('id, name, address');
 ```
+### Select Bootstrap Version
+> Either You may Use Bootstrap 3 or Bootstrap 4. (Default is Bootstrap 4)
+```php
+$this->dollse_crud->bootstrap('3'); /// 3 or 4 (It will load via CDN)
+```
