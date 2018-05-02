@@ -45,7 +45,10 @@ You can start using this library in just two steps.
 > To use dollse_CRUB inbuilt functions, preferably just call after calling table name. example as given below:
 
 1. [Where Condition](#to-use-where-condition "Where Condition")
-2. [Select Columns for View](#select-columns-for-view "Select Columns for View")
+2. [Select Columns for View (in List)](#select-columns-for-view-in-list "Select Columns for View (in List)")
+3. [Select Columns for View](#select-columns-for-view "Select Columns for View")
+4. [Select Columns for Edit Form](#select-columns-for-edit-form "Select Columns for Edit Form")
+5. [Select Columns for Add Form](#select-columns-for-add-form "Select Columns for Add Form")
 
 ### To use Where Condition:
 
