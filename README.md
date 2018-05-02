@@ -54,8 +54,13 @@ $this->load->library('dollse_crud'); /// loaded Library
 $this->dollse_crud->table('market'); /// Set table
 $this->dollse_crud->where('id', 7); /// called where condition
 ```
-### Select Columns for View
-> This will select specific columns for display purpose only, not editing or adding
+### Select Columns for View (in List)
+> This will select specific columns at list view, not editing or adding or not in detail view.
 ```php
-$this->dollse_crud->columns('id, name, address');
+$this->dollse_crud->field_names('id, name, address');
+```
+### Select Columns for View
+> This will select specific columns for display purpose only in detail, not editing nor adding nor list view
+```php
+$this->dollse_crud->view_columns('id, name, address');
 ```
