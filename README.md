@@ -17,6 +17,7 @@ Configuration is very simple.. Just copy and paste the library and model folder 
 You can start using this library in just two steps.
 1. in your view include  **<?php echo $header; ?>** in head and include **<?php echo $view ?>** inside body elements. example as given below:
 
+```
 <html>
 <head>
     <?php echo $header; ?>
@@ -28,4 +29,4 @@ You can start using this library in just two steps.
     </div>
 </body>
 </html>
-
+```
