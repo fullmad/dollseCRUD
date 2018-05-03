@@ -109,3 +109,12 @@ $this->dollse_crud->unset_add(); /// to unset add option
 $this->dollse_crud->button(array('Receipt', 'url', 'html'));
 /// id will be automatically appended after url. eg: abcd.com/site/receip/id
 ```
+
+### Edit Titles
+> You may change titles using simple functions
+```php
+$this->dollse_crud->list_title('List of Users');
+$this->dollse_crud->edit_title('Edit User Record');
+$this->dollse_crud->view_title('Detail of User');
+$this->dollse_crud->add_title('Add New User');
+```
