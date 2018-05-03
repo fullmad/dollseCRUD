@@ -118,4 +118,5 @@ $this->dollse_crud->list_title('List of Users');
 $this->dollse_crud->edit_title('Edit User Record');
 $this->dollse_crud->view_title('Detail of User');
 $this->dollse_crud->add_title('Add New User');
+$this->dollse_crud->add_button_title('Add User'); // Title to set at Add Button
 ```
