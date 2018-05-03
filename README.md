@@ -53,6 +53,7 @@ You can start using this library in just two steps.
 7. [Unset Jquery, Bootstrap, Jquery UI](#unset-jquery-bootstrap-jquery-ui "Unset Jquery, Bootstrap, Jquery UI")
 8. [Unset Edit, Add,Remove or Detail View](#unset-edit-add-or-detail-view "Unset Edit, Add or Detail View")
 9. [Custom Button](#custom-button "Custom Button")
+10. [Edit Titles](#edit-titles "Edit Titles")
 
 ### To use Where Condition:
 
