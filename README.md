@@ -51,7 +51,7 @@ You can start using this library in just two steps.
 5. [Select Columns for Add Form](#select-columns-for-add-form "Select Columns for Add Form")
 6. [Select Bootstrap Version](#select-bootstrap-version "Select Bootstrap Version")
 7. [Unset Jquery, Bootstrap, Jquery UI](#unset-jquery-bootstrap-jquery-ui "Unset Jquery, Bootstrap, Jquery UI")
-8. [Unset Edit, Add or Detail View](#unset-edit-add-or-detail-view "Unset Edit, Add or Detail View")
+8. [Unset Edit, Add,Remove or Detail View](#unset-edit-add-or-detail-view "Unset Edit, Add or Detail View")
 9. [Custom Button](#custom-button "Custom Button")
 
 ### To use Where Condition:
@@ -100,10 +100,12 @@ $this->dollse_crud->unset_bootstrap(); /// to unset bootstrap from loading
 $this->dollse_crud->unset_view(); /// to unset detail view option
 $this->dollse_crud->unset_edit(); /// to unset edit option
 $this->dollse_crud->unset_remove(); /// to unset remove option
+$this->dollse_crud->unset_add(); /// to unset add option
 ```
 
 ### Custom Button
 > If you want to add custom button in list view you may try this
 ```php
-$this->dollse_crud->button('Receipt', 'url'); /// id will be automatically appended after url. eg: abcd.com/site/receip/id
+$this->dollse_crud->button(array('Receipt', 'url', 'html'));
+/// id will be automatically appended after url. eg: abcd.com/site/receip/id
 ```
