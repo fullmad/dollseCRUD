@@ -120,3 +120,14 @@ $this->dollse_crud->view_title('Detail of User');
 $this->dollse_crud->add_title('Add New User');
 $this->dollse_crud->add_button_title('Add User'); // Title to set at Add Button
 ```
+### Miscellenius Functions
+> Fetch (Pull) Specific id from different table using give id.
+```php
+$this->dollse_crud->pull_data($field_name, $table_name, $column_name);
+        /// $column_name = column name of currrent table
+        /// $table_name = table name of second table
+        /// $field_name = column name of second table that we want to select;
+## Example: $this->dollse_crud->pull_data('name', 'member', 'member_id');
+## Suppose current table name is "profile" then this will fetch record from member table like this way:
+## SELECT member.name FROM member WHERE id = profile.member_id ; //this is not JOIN, just an example
+```
