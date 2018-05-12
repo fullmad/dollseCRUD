@@ -45,6 +45,7 @@ class Crud_model extends CI_Model
     private $allow_remove;
     private $allow_add;
     private $bootstrap_version = 4;
+    private $pull_data;
 
     public function __construct()
     {
@@ -66,7 +67,8 @@ class Crud_model extends CI_Model
         $order_by_start,
         $order_by_end,
         $limit_start,
-        $limit_end
+        $limit_end,
+        $pull_data
     )
     {
         $this->table_name = $table_name;
@@ -84,9 +86,12 @@ class Crud_model extends CI_Model
         if (trim($order_by_start) !== ""):
             $this->db->order_by($order_by_start, $order_by_end);
         endif;
+
         if (trim($limit_start) !== ""):
             $this->db->limit($limit_start, $limit_end);
         endif;
+
+        $this->pull_data = $pull_data;
 
         $data = $this->db->get($table_name)->result_array();
         return $data;
@@ -119,6 +124,12 @@ class Crud_model extends CI_Model
         return $data;
     }
 
+    private function select($field_name, $table_name, $where)
+    {
+        $this->db->select($field_name)->where($where);
+        return $this->db->get($table_name)->row()->$field_name;
+    }
+
     public function template_list($data, $field_names, $button = '', $title, $add_btn_title)
     {
         $this->load->library('session');
@@ -128,9 +139,9 @@ class Crud_model extends CI_Model
 ' . $this->session->flashdata('dollsecrud_flash') . '
 ';
         }
-        $result .= '
-        <div class="table-responsive">
-        <h5 class="float-right pull-right text-secondary">' . ($title ? $title : 'List of Records') . '</h5>
+        $result .= '<div class="col-sm-1"></div>
+        <div class="table-responsive" style="margin: 10px">
+        <h3 class="float-right pull-right text-secondary">' . ($title ? $title : 'List of Records') . '</h3>
 <table id="' . $this->table_name . '" class="table table-striped table-hover" width="100%" cellspacing="0">
 <thead style="background-color: #4a4a4a; color:#fff">
     <tr><th>SN.</th>';
@@ -166,6 +177,13 @@ class Crud_model extends CI_Model
                     unset($value);
                 } else if ($key == 'id' && $field_names !== "*" && strpos($field_names, 'id') === false) {
                     unset($value);
+                    echo 1;
+                } else if (trim($this->pull_data) !== "" && $this->pull_data[2] == $key) {
+                    $value  = $this->select($this->pull_data[0], $this->pull_data[1], array('id' => $value));
+                    $result .= '
+    <td>
+    ' . $value . '
+</td>';
                 } else {
                     $result .= '
     <td>
@@ -198,7 +216,7 @@ class Crud_model extends CI_Model
 
         $result .= '
 </tbody>
-</table></div>
+</table></div><div class="col-sm-1"></div>
 ';
 
         return $result;
