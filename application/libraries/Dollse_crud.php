@@ -41,29 +41,30 @@ class Dollse_crud
 {
 
     private $table;
-    private $where = "";
-    private $where2 = ""; /// Optional
-    private $order_by_start = "";
-    private $order_by_end = "";
-    private $limit_start = "";
-    private $limit_end = "";
-    private $field_names = "";
-    private $view_columns = "";
-    private $edit_columns = "";
-    private $add_columns = "";
-    private $load_add = 1;
-    private $load_view = 1;
-    private $load_edit = 1;
-    private $load_remove = 1;
-    private $load_jquery = 1;
-    private $load_bootstrap = 1;
-    private $load_jquery_ui = 1;
-    private $button = '';
-    private $list_title = '';
-    private $edit_title = '';
-    private $view_title = '';
-    private $add_title = '';
+    private $where            = "";
+    private $where2           = ""; /// Optional
+    private $order_by_start   = "";
+    private $order_by_end     = "";
+    private $limit_start      = "";
+    private $limit_end        = "";
+    private $field_names      = "";
+    private $view_columns     = "";
+    private $edit_columns     = "";
+    private $add_columns      = "";
+    private $load_add         = 1;
+    private $load_view        = 1;
+    private $load_edit        = 1;
+    private $load_remove      = 1;
+    private $load_jquery      = 1;
+    private $load_bootstrap   = 1;
+    private $load_jquery_ui   = 1;
+    private $button           = '';
+    private $list_title       = '';
+    private $edit_title       = '';
+    private $view_title       = '';
+    private $add_title        = '';
     private $add_button_title = '';
+    private $pull_data        = ''; /// Pull field from other table using given parameter
 
     protected $CI;
 
@@ -116,6 +117,14 @@ class Dollse_crud
         $this->CI->crud_model->set_bootstrap($version);
     }
 
+    public function pull_data($field_name, $table_name, $column_name)
+    {
+        /// $column_name = column name of currrent table
+        /// $table_name = table name of second table
+        /// $field_name = column name of second table that we want to select;
+        $this->pull_data = array($field_name, $table_name, $column_name);
+    }
+
     public function list_title($title)
     {
         $this->list_title = $title;
@@ -144,11 +153,11 @@ class Dollse_crud
     public function header()
     {
         $params = array(
-            'add'       => $this->load_add,
-            'view'      => $this->load_view,
-            'edit'      => $this->load_edit,
-            'remove'    => $this->load_remove,
-            'jquery'    => $this->load_jquery,
+            'add' => $this->load_add,
+            'view' => $this->load_view,
+            'edit' => $this->load_edit,
+            'remove' => $this->load_remove,
+            'jquery' => $this->load_jquery,
             'bootstrap' => $this->load_bootstrap,
             'jquery_ui' => $this->load_jquery_ui,
         );
@@ -316,7 +325,8 @@ class Dollse_crud
             $this->order_by_start,
             $this->order_by_end,
             $this->limit_start,
-            $this->limit_end
+            $this->limit_end,
+            $this->pull_data
         );
     }
 
