@@ -62,8 +62,8 @@ class Crud_model extends CI_Model
     (
         $table_name,
         $select_data,
-        $where_1,
-        $where_2,
+        $where,
+        $or_where,
         $order_by_start,
         $order_by_end,
         $limit_start,
@@ -76,13 +76,12 @@ class Crud_model extends CI_Model
             $select_data = "id," . $select_data;
         }
         $this->db->select($select_data);
-        if (trim($where_1) !== "" || trim($where_2) !== ""):
-            if (trim($where_2) == "") {
-                $this->db->where($where_1);
-            } else {
-                $this->db->where($where_1, $where_2);
-            }
-        endif;
+        if (trim($where) !== "") {
+            $this->db->where($where);
+        }
+        if (trim($or_where) !== "") {
+            $this->db->or_where($or_where);
+        }
         if (trim($order_by_start) !== ""):
             $this->db->order_by($order_by_start, $order_by_end);
         endif;
