@@ -44,7 +44,7 @@ You can start using this library in just two steps.
 ## AVAILABLE FUNCTIONS
 > To use dollse_CRUB inbuilt functions, preferably just call after calling table name. example as given below:
 
-1. [Where Condition](#to-use-where-condition "Where Condition")
+1. [Where/Or Where Condition](#to-use-where-condition "Where Condition")
 2. [Select Columns for View (in List)](#select-columns-for-view-in-list "Select Columns for View (in List)")
 3. [Select Columns for View](#select-columns-for-view "Select Columns for View")
 4. [Select Columns for Edit Form](#select-columns-for-edit-form "Select Columns for Edit Form")
@@ -56,12 +56,13 @@ You can start using this library in just two steps.
 10. [Edit Titles](#edit-titles "Edit Titles")
 11. [Miscellaneous Functions](#miscellaneous-functions "Miscellaneous Functions")
 
-### To use Where Condition:
+### To use Where/Or Where Condition:
 
 ```php
 $this->load->library('dollse_crud'); /// loaded Library
 $this->dollse_crud->table('market'); /// Set table
-$this->dollse_crud->where('id', 7); /// called where condition
+$this->dollse_crud->where(array('id'=> 7, 'email'=>'example@dd.com')); /// called where condition in array format
+$this->dollse_crud->or_where(array('name'=>'User One')); /// called or where condition in array format
 ```
 ### Select Columns for View (in List)
 > This will select specific columns at list view, not editing or adding or not in detail view.
