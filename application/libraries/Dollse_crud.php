@@ -42,7 +42,7 @@ class Dollse_crud
 
     private $table;
     private $where            = "";
-    private $where2           = ""; /// Optional
+    private $or_where         = "";
     private $order_by_start   = "";
     private $order_by_end     = "";
     private $limit_start      = "";
@@ -176,14 +176,14 @@ class Dollse_crud
         $this->button = $array;
     }
 
-    public function where($condition_array, $param2)
+    public function where($condition_array)
     {
-        if (trim($param2) == ""):
-            $this->where = $condition_array;
-        else:
-            $this->where  = $condition_array;
-            $this->where2 = $param2;
-        endif;
+        $this->where = $condition_array;
+    }
+
+    public function or_where($condition_array)
+    {
+        $this->or_where = $condition_array;
     }
 
     public function order_by($start, $end = 'ASC')
@@ -222,8 +222,7 @@ class Dollse_crud
     public function view($select = '*')
     {
         if ($this->CI->uri->segment('3') == "view"):
-            $this->where  = "id";
-            $this->where2 = $this->CI->uri->segment(4);
+            $this->where = array("id" => $this->CI->uri->segment(4));
             if (trim($this->view_columns) == "") {
                 $this->view_columns = $select;
             } else {
@@ -232,8 +231,7 @@ class Dollse_crud
             $data = $this->generate_query($select);
             return $this->CI->crud_model->view($data, $this->view_columns, $this->view_title);
         elseif ($this->CI->uri->segment('5') == "edit"):
-            $this->where  = "id";
-            $this->where2 = $this->CI->uri->segment(4);
+            $this->where = array("id" => $this->CI->uri->segment(4));
 
             $array = array();
             foreach ($_POST as $name => $value) {
@@ -276,8 +274,7 @@ class Dollse_crud
                 redirect(site_url($this->CI->router->fetch_class() . '/' . $this->CI->router->fetch_method()));
             }
         elseif ($this->CI->uri->segment('3') == "edit"):
-            $this->where  = "id";
-            $this->where2 = $this->CI->uri->segment(4);
+            $this->where = array("id" => $this->CI->uri->segment(4));
             if (trim($this->edit_columns) == "") {
                 $this->edit_columns = $select;
             } else {
@@ -321,7 +318,7 @@ class Dollse_crud
             $this->table,
             $fields,
             $this->where,
-            $this->where2,
+            $this->or_where,
             $this->order_by_start,
             $this->order_by_end,
             $this->limit_start,
