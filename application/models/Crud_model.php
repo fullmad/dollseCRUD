@@ -141,7 +141,7 @@ class Crud_model extends CI_Model
         }
         $result .= '<div class="col-sm-1"></div>
         <div class="table-responsive" style="margin: 10px">
-        <h4 class="float-right pull-right text-secondary">' . ($title ? $title : 'List of Records') . '</h4>
+        <h4 class="float-right pull-left text-secondary">' . ($title ? $title : 'List of Records') . '</h4>
 <table id="' . $this->table_name . '" class="table table-striped table-hover" width="100%" cellspacing="0">
 <thead style="background-color: #4a4a4a; color:#fff">
     <tr><th>SN.</th>';
