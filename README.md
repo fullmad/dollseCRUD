@@ -54,7 +54,7 @@ You can start using this library in just two steps.
 8. [Unset Edit, Add,Remove or Detail View](#unset-edit-add-or-detail-view "Unset Edit, Add or Detail View")
 9. [Custom Button](#custom-button "Custom Button")
 10. [Edit Titles](#edit-titles "Edit Titles")
-11. [Miscellaneous Functions](#miscellaneous "Miscellaneous Functions")
+11. [Miscellaneous Functions](#miscellaneous-functions "Miscellaneous Functions")
 
 ### To use Where Condition:
 
@@ -122,7 +122,7 @@ $this->dollse_crud->add_title('Add New User');
 $this->dollse_crud->add_button_title('Add User'); // Title to set at Add Button
 ```
 ### Miscellaneous Functions
-> Fetch (Pull) Specific id from different table using give id.
+> Fetch (Pull) Specific id from different table using given id.
 ```php
 $this->dollse_crud->pull_data($field_name, $table_name, $column_name);
         /// $column_name = column name of currrent table
