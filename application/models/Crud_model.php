@@ -141,7 +141,7 @@ class Crud_model extends CI_Model
         }
         $result .= '<div class="col-sm-1"></div>
         <div class="table-responsive" style="margin: 10px">
-        <h3 class="float-right pull-right text-secondary">' . ($title ? $title : 'List of Records') . '</h3>
+        <h4 class="float-right pull-right text-secondary">' . ($title ? $title : 'List of Records') . '</h4>
 <table id="' . $this->table_name . '" class="table table-striped table-hover" width="100%" cellspacing="0">
 <thead style="background-color: #4a4a4a; color:#fff">
     <tr><th>SN.</th>';
@@ -156,7 +156,7 @@ class Crud_model extends CI_Model
         } else {
             $fields = explode(',', trim($field_names));
             foreach ($fields as $val) {
-                if ($val !== "id" || strpos($field_names, 'id') >= 0):
+                if ($val !== "id" || in_array('id', explode(',', $field_names)) === true):
                     $val    = str_ireplace("_", " ", $val);
                     $result .= '<th>' . ucwords($val) . '</th>';
                 endif;
@@ -174,17 +174,14 @@ class Crud_model extends CI_Model
             $result .= '<tr><td>' . $sn++ . '</td>';
             foreach ($val as $key => $value):
                 if ($key == 'id' && $field_names == "*") {
-                    unset($value);
-                } else if ($key == 'id' && $field_names !== "*" && strpos($field_names, 'id') === false) {
-                    unset($value);
                     echo 1;
-                } else if (trim($this->pull_data) !== "" && $this->pull_data[2] == $key) {
-                    $value  = $this->select($this->pull_data[0], $this->pull_data[1], array('id' => $value));
-                    $result .= '
-    <td>
-    ' . $value . '
-</td>';
+                    unset($value);
+                } else if ($key == 'id' && $field_names !== "*" && in_array('id', explode(',', $field_names)) === false) {
+                    unset($value);
                 } else {
+                    if (trim($this->pull_data) !== "" && $this->pull_data[2] == $key) {
+                        $value = $this->select($this->pull_data[0], $this->pull_data[1], array('id' => $value));
+                    }
                     $result .= '
     <td>
     ' . $value . '
